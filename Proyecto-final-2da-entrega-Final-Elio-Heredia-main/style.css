@@ -29,52 +29,32 @@ body {
 }
 
 .navbar-rs {
-    text-decoration: black;
     grid-area: b-nav;
     background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
     width: 80vw;
     justify-content: stretch
 }
 
-div nav div a {
-    color: white;
-}
-
-.nav-item {
+div nav div div ul li a {
     list-style: none;
     color: black;
-    text-decoration: none;
 }
 
-.nav-item:hover {
+div nav div div ul li a:hover {
     background: rgb(134, 143, 151)
 }
 
 .nav-link {
-    list-style: none;
     color: black;
-    text-decoration: none;
-}
 
-.nav-item:hover {
-    background: rgb(134, 143, 151)
 }
 
 .localH {
-    max-width: 45vw;
     justify-content: center;
     grid-area: img-vid;
     margin: 10px;
     padding: 15px;
     justify-items: center;
-}
-.titulo-h5 {
-    background: #182848;
-
-}
-
-.parrafo-img {
-    background-color: #4b6cb7;
 }
 
 .div-nos {
@@ -122,15 +102,13 @@ div nav div a {
 .secProductos a {
     text-decoration: none;
     color: antiquewhite;
-
-
+    transition: all 2s;
 }
 
 .secProductos:hover {
     background: rgb(11, 17, 71);
     background: radial-gradient(circle, rgba(11, 17, 71, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(38, 24, 4, 1) 100%);
-
-
+    transform: scale(1.2);
 }
 
 
@@ -140,46 +118,15 @@ div nav div a {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.divBazar a {
+    text-decoration: none;
+    color: antiquewhite;
     transition: all 2s;
 }
 
-
-.divBazar:hover {
-    transform: scale(1.2);
-    background: rgb(11, 17, 71);
-    background: radial-gradient(circle, rgba(11, 17, 71, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(38, 24, 4, 1) 100%);
-
-}
-
-.divDeco {
-    background: rgb(11, 17, 71);
-    background: radial-gradient(circle, rgba(11, 17, 71, 1) 0%, rgba(77, 226, 199, 1) 50%, rgba(7, 4, 38, 1) 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: all 2s;
-}
-
-
-.divDeco:hover {
-    transform: scale(1.2);
-    background: rgb(11, 17, 71);
-    background: radial-gradient(circle, rgba(11, 17, 71, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(38, 24, 4, 1) 100%);
-
-}
-
-.divHogar {
-    background: rgb(11, 17, 71);
-    background: radial-gradient(circle, rgba(11, 17, 71, 1) 0%, rgba(77, 226, 199, 1) 50%, rgba(7, 4, 38, 1) 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: all 2s;
-
-}
-
-
-.divHogar:hover {
+.divBazar a :hover {
     background: rgb(11, 17, 71);
     background: radial-gradient(circle, rgba(11, 17, 71, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(38, 24, 4, 1) 100%);
     transform: scale(1.2);
@@ -237,21 +184,19 @@ div nav div a {
 
 /*Footer */
 footer {
-    max-width: 100vw;
     background: rgb(11, 17, 71);
     background: linear-gradient(90deg, rgb(68, 78, 161) 0%, rgb(180, 122, 34) 50%, rgb(63, 8, 40) 100%);
+    height: 15vw;
+    font-size: 3.5vw;
+    width: 100vw;
+    font-size: 20px;
     display: flex;
     flex-direction: row;
+
     align-items: center;
 }
 
-.form-contact {
-    background: rgb(11, 17, 71);
-    background: linear-gradient(90deg, rgb(47, 52, 94) 0%, rgb(75, 58, 33) 50%, rgb(58, 14, 40) 100%);
-}
-
-
-.form-contact {
+footer p {
     color: rgb(10, 9, 9);
     justify-content: center;
 }
@@ -263,7 +208,7 @@ footer iframe {
 
 
 /*Empieza el media querie 480px*/
-@media screen and (max-width:480px) {
+@media screen and (max-width: 480px) {
     .logo-tit {
         margin: 10vw;
         padding: 5vw;
@@ -296,13 +241,17 @@ footer iframe {
 
     .div-nos {
         align-items: center;
+        /*align-content: center;*/
+        justify-content: center ;
         max-width: 100vw;
         max-height: 70vw;
 
     }
+    .div-nos div div{
+        text-align: center;
+    }
 
     .localH {
-        align-items: center;
         max-width: 100vw;
         max-height: 70vw;
     }
@@ -310,7 +259,7 @@ footer iframe {
     .claseRedes {
         margin: 2vw;
         padding: 0.5vh;
-        font-size: 50vw;
+        font-size: 15vw;
     }
 
     .secProductos {
@@ -320,7 +269,11 @@ footer iframe {
         margin: 3px;
         padding: 5px;
         gap: 10px;
+        
 
+    }
+    .divBazar img{
+        max-width: 60vw;
     }
 
     .articleVarios {
@@ -372,12 +325,12 @@ footer iframe {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(1fr, 6);
         grid-template-areas:
-            "logo-tit"
-            "b-nav"
-            "info-uno"
-            "img-vid"
-            "img-vid"
-            "info-dos"
+        "logo-tit"
+        "b-nav"
+        "img-vid"
+        "info"
+        "info"
+        "info"
         ;
     }
 
